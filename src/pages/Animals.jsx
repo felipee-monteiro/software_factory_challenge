@@ -24,7 +24,7 @@ function Animals() {
           <p>Habitat Natural: <i>{animal.habitat}</i></p>
           <p>Dieta: {animal.diet}</p>
           <p>Localização: {animal.geo_range}</p>
-          <button className='btn' onClick={updateAnimal}>Gerar animal</button>
+          <button className='btn' onClick={() => updateAnimal()}>Gerar animal</button>
         </section>
       </main>
     </>
