@@ -2,11 +2,12 @@ import * as React from 'react';
 
 function HomePage() {
     return (
-        <main>
-            <h1>Zoo</h1>
-            <p>The best zoo in the planet!</p>
+        <main className='center column'>
+            <section>
+                <h1 className="title">Zootopia</h1>
+                <p>O zoológico mais completo da região!</p>
+            </section>
         </main>
     );
 }
-
 export default HomePage;
