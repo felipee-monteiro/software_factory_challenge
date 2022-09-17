@@ -1,8 +1,22 @@
 import * as React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { AiOutlineHeart } from 'react-icons/ai';
+import ReactSearchBox from 'react-search-box';
+import {useNavigate} from 'react-router-dom';
+import {Context} from '../Providers/Context';
+import {Link, Outlet} from 'react-router-dom';
+import {AiOutlineHeart} from 'react-icons/ai';
 
 function Navbar() {
+    const {animals} = React.useContext(Context);
+    const navigate = useNavigate();
+    const data = [];
+
+    for (const placeholder in animals) {
+        data.push({
+            key: animals[placeholder].name,
+            value: animals[placeholder].name
+        });
+    }
+
     return (
         <>
             <nav className='flex j-between a-center'>
@@ -17,7 +31,13 @@ function Navbar() {
                         <Link to='/galery'>Galeria</Link>
                     </li>
                 </ul>
-                <div className="favorites">
+                <ReactSearchBox
+                    placeholder="Pesquisar Animais..."
+                    value="Doe"
+                    data={data}
+                    onSelect={item => navigate(`/animals/details/${item.item.key}`)}
+                />
+                <div className="flex j-center favorites">
                     <Link to='/favorites'>
                         <AiOutlineHeart height='2rem' />
                     </Link>
