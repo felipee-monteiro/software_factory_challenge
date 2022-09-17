@@ -1,26 +1,16 @@
 import * as React from 'react';
 import {toast} from 'react-toastify';
 import ReactLoading from 'react-loading';
-import {FavoritesContext} from '../Providers/FavoritesContext';
+import {Context} from '../Providers/Context';
 import {AiOutlineHeart} from 'react-icons/ai';
 import {setLocalStorageItems} from '../utils';
 
 function Galery() {
-    const [animals, setAnimals] = React.useState([]);
-    const {favorites, setFavorites} = React.useContext(FavoritesContext);
-
-    const getAnimals = async () => {
-        const response = await fetch("https://zoo-animal-api.herokuapp.com/animals/rand/8");
-        return await response.json();
-    }
+    const {favorites, setFavorites, animals} = React.useContext(Context);
 
     React.useEffect(() => {
         setLocalStorageItems('zoo_favorites', JSON.stringify(favorites));
     }, [favorites]);
-
-    React.useEffect(() => {
-        getAnimals().then(setAnimals);
-    }, []);
 
     return (
         <>

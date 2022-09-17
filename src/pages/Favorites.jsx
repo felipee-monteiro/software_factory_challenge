@@ -1,10 +1,10 @@
 import * as React from 'react';
 import {toast} from 'react-toastify';
-import {FavoritesContext} from '../Providers/FavoritesContext';
+import {Context} from '../Providers/Context';
 import {setLocalStorageItems} from '../utils';
 
 function Favorites() {
-    const {favorites, setFavorites} = React.useContext(FavoritesContext);
+    const {favorites, setFavorites} = React.useContext(Context);
 
     React.useEffect(() => {
         setLocalStorageItems('zoo_favorites', JSON.stringify(favorites));
