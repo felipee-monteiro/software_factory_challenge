@@ -5,6 +5,7 @@ import HomePage from '../pages/Home';
 import Animals from '../pages/Animals';
 import Galery from '../pages/Galery';
 import Favorites from '../pages/Favorites';
+import AnimalDetails from '../pages/AnimalDetails';
 
 export const routes = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/favorites',
                 element: <Favorites />
+            },
+            {
+                path: '/animals/details/:animal_name',
+                element: <AnimalDetails />
             }
         ]
     }
