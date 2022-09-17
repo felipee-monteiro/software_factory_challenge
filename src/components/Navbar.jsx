@@ -12,10 +12,13 @@ function Navbar() {
                     <li>
                         <Link to='/animals'>Animals</Link>
                     </li>
+                    <li>
+                        <Link to='/galery'>Galeria</Link>
+                    </li>
                 </ul>
             </nav>
             <Outlet />
         </>
     );
 }
-export default Navbar;
+export default Navbar; 
