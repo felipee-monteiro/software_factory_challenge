@@ -98,7 +98,7 @@ section.grid-section {
    flex-direction: column;
    row-gap: 1rem;
    text-align: center;
-   min-width: 20rem;
+   max-width: 27rem;
    background-color: #fff;
    border-radius: 0.5rem;
    padding: 1.5rem;
