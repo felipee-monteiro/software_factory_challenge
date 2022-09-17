@@ -2,7 +2,7 @@
 
 :root {
     --primary: #686de0;
-    --box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.5);
+    --box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.8);
     --flex: flex;
 }
 
@@ -20,10 +20,11 @@ body, html {
    height: 100%;
    font-size: 90%;
    background-color: var(--primary);
+   overflow-x: hidden;
 }
 
 nav {
-   width: 100%;
+   width: 100vw;
    padding: 1rem;
    background-color: whitesmoke;
    box-shadow: var(--box-shadow);
@@ -37,6 +38,7 @@ ul, ul li, ul li a {
    list-style: none;
    text-decoration: none;
    display: inline-block;
+   font-size: 1.3rem;
 }
 
 ul li a:hover {
@@ -49,9 +51,15 @@ img {
    object-position: center;
 }
 
+button {
+   cursor: pointer;
+   border: none;
+}
+
+/* utility classes */
+
 .flex {
    display: var(--flex);
-   align-items: center;
 }
 
 .column {
@@ -66,41 +74,68 @@ img {
    justify-content: center;
 }
 
-section.wrapper {
-   display: var(--flex);
-   height: 100vh;
-   width: 100%;
-   justify-content: center;
+.a-center {
    align-items: center;
+}
+
+.h-100 {
+   height: 100%!important;
+}
+
+section.grid-section {
+   max-width: 65rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   grid-gap: 1rem;
+   margin: 2rem auto;
+   justify-content: center;
+   padding: 4rem;
 }
 
 .card {
    display: var(--flex);
    justify-content: space-between;
    flex-direction: column;
-   row-gap: 0.5rem;
+   row-gap: 1rem;
    text-align: center;
-   max-width: 22rem;
-   min-height: 26rem;
+   min-width: 20rem;
    background-color: #fff;
    border-radius: 0.5rem;
    padding: 1.5rem;
-   margin: 0 1rem;
    box-shadow: var(--box-shadow);
+   font-size: 1rem;
 }
 
 .btn {
    background-color: var(--primary);
    color: white;
    padding: 0.5rem 1rem;
-   border: none;
-   cursor: pointer;
    border-radius: 0.3rem;
    box-shadow: var(--box-shadow);
+   font-size: 1.3rem;
+   transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+   background-color: #595de0;
+}
+
+.favorites {
+   margin: 0 1rem;
+   font-size: 2rem;
+}
+
+.title {
+   color: white;
+   font-size: 3.5rem;
 }
 
 .center {
    display: var(--flex);
    align-items: center;
    justify-content: center;
+   height: 100vh;
+   width: 100%;
+   margin: 2rem auto;
 }
+
