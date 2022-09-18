@@ -34,11 +34,11 @@ nav {
 
 ul, ul li, ul li a {
    color: var(--primary);
-   margin: 0 1rem;
+   margin-left: 0.5rem;
    list-style: none;
    text-decoration: none;
    display: inline-block;
-   font-size: 1.3rem;
+   font-size: 1rem;
 }
 
 ul li a:hover {
