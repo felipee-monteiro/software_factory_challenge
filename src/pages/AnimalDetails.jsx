@@ -10,8 +10,8 @@ function AnimalDetails() {
 
     return (
         <>
-            <main className='center'>
-                <section className='card'>
+            <main className="center">
+                {animal ? <section className='card'>
                     <h1>{animal.name}</h1>
                     <img src={animal.image_link} width='200' height='200' alt={animal.name} />
                     <p>Nome em Latim: <i>{animal.latin_name}</i></p>
@@ -19,6 +19,7 @@ function AnimalDetails() {
                     <p>Dieta: {animal.diet}</p>
                     <p>Localização: {animal.geo_range}</p>
                 </section>
+                    : <section className='card'><h1>Animal não encontrado</h1></section>}
             </main>
         </>
     );
