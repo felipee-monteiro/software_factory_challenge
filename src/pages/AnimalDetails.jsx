@@ -6,7 +6,7 @@ function AnimalDetails() {
     const {animals} = React.useContext(Context);
     const {animal_name} = useParams();
 
-    const animal = animals.filter(animal => animal.name === animal_name)[0];
+    const animal = animals.find(animal => animal.name === animal_name);
 
     return (
         <>
