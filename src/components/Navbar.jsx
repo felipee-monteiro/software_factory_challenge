@@ -11,11 +11,13 @@ function Navbar() {
     const data = [];
 
     for (const placeholder in animals) {
+        const { name } = animals[placeholder];
         data.push({
-            key: animals[placeholder].name,
-            value: animals[placeholder].name
+            key: name,
+            value: name
         });
     }
+  
 
     return (
         <>
